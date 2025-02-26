@@ -1,0 +1,36 @@
+name: gemini_chat_application
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.0-26.0.dev
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_native_splash: ^2.3.7
+  flutter_riverpod: ^2.4.18
+  flutter_dotenv: ^5.1.0
+  google_generative_ai: ^0.4.0
+
+flutter_native_splash:
+  color: "#3369FF"
+  image: img/splashscreen.png
+  android: true
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - img/send.png
+    - img/gpt-robot.png
+    - img/onboarding.png
+    # - img/splashscreen.png
+    - img/volume-high.png
+    - .env
+ 
