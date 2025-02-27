@@ -9,6 +9,9 @@ import 'package:gemini_chat_application/massage.dart';
 import 'package:gemini_chat_application/themeNotifier.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
+
+
+// GOOGLE_API_KEY="AIzaSyAECTRAytfgC-w18mjQFKhNUiJHPtqsHf8"
 /*
 api key of gemini ai
 
@@ -25,7 +28,7 @@ class MyHomePage extends ConsumerStatefulWidget {
 }
 
 class _MyHomePage extends ConsumerState<MyHomePage> {
-  final TextEditingController _controller = new TextEditingController();
+  final TextEditingController _controller =  TextEditingController();
 
   final List<Message> _messages = [
                       Message(text: "Hii!!", isUser: true),
@@ -49,7 +52,8 @@ class _MyHomePage extends ConsumerState<MyHomePage> {
       // _controller.clear();
 
       }
-        final model = GenerativeModel(model:'gemini-pro',apiKey:dotenv.env['GOOGLE_API_KEY']!);
+        final model = GenerativeModel(model:'gemini-2.0-flash',apiKey:dotenv.env['GOOGLE_API_KEY']!);
+        // final model = GenerativeModel(model:'gemini-pro',apiKey:"AIzaSyAECTRAytfgC-w18mjQFKhNUiJHPtqsHf8");
 
       final prompt = _controller.text.trim();
       final content = [Content.text(prompt)];
@@ -67,6 +71,9 @@ class _MyHomePage extends ConsumerState<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // log();
+
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
